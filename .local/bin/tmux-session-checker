@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+if [[ "$TERM" =~ "screen".* ]]; then
+  tmux neww tmux-sessionizer
+  # echo "You are in a tmux session already"
+else
+  tmux new tmux-sessionizer
+  # Launches tmux in a session called 'base'.
+  # tmux attach -t base || tmux new -s base
+fi
